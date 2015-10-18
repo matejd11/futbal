@@ -1,2 +1,2 @@
 Router.route 'players',
-  title: 'Hráči'
+	title: 'Hráči'

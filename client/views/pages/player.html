@@ -1,0 +1,29 @@
+<template name="players">
+    <div class="preview">
+        <ul>
+            {{#each data}}
+                <li>
+                    <div style="display: inline">
+                        Meno: {{firstName}} {{lastName}} 
+                        {{#if active}}
+                            *
+                        {{/if}}
+                        {{#if currentUser}}
+                            {{#if isInRole 'admin'}}
+                                <button class="delete">&times;</button>   
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    <div>
+                        {{#if currentUser}}
+                            <a href="{{pathFor 'detailPlayer'}}">zobraziť detaily ...</a>
+                        {{/if}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        {{#if isInRole 'admin'}}
+            {{> newPlayer}}
+        {{/if}}
+    </div>
+</template>
