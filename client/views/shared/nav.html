@@ -1,0 +1,42 @@
+<template name='nav'>
+    <nav class="nav">
+        <ul>
+            <li class="brand noDivider">
+                <a href="{{pathFor 'home'}}">Futbal</a>
+            </li>
+            <li>
+                <span class="toggle">nav</span>
+            </li>
+            <div class="navbar">
+                <li>
+                    <a href="{{pathFor 'home'}}">Home</a>
+                </li>
+                <li>
+                    <a href="{{pathFor 'preview'}}">Dashboard</a>
+                </li>
+                <li>
+                    <a href="{{pathFor 'players'}}">Players</a>
+                </li>
+                <li>
+                    <a href="{{pathFor 'teams'}}">Teams</a>
+                </li>
+                <li>
+                    <a href="{{pathFor 'matches'}}">Matches</a>
+                </li>
+                {{#if currentUser}}
+                    <li>
+                        <a href="{{pathFor 'profileSettings'}}">Settings</a>
+                    </li>
+                    <li class="noDivider">
+                        <a href="{{pathFor 'logout'}}">Log out</a>
+                    </li>
+                {{else}}
+                    <li class="noDivider">
+                        <!--<a href="#">{{> loginButtons align="left"}}</a>-->
+                        <a href="{{pathFor 'login'}}">Log in</a>
+                    </li>
+                {{/if}}
+            </div>
+        </ul>
+    </nav>
+</template>
